@@ -192,10 +192,15 @@ h3 {
   margin-bottom: 28px;
 }
 
-.grid {
+.grid,
+.repo-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.repo-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 article {
@@ -204,6 +209,31 @@ article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.repo-card.highlight {
+  border-color: var(--accent);
+}
+
+.repo-card a {
+  margin-top: auto;
+  color: var(--accent-2);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.repo-role {
+  color: var(--warn);
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
 }
 
 article p,
@@ -272,6 +302,7 @@ footer {
   .hero,
   .split,
   .grid,
+  .repo-grid,
   .steps {
     grid-template-columns: 1fr;
   }

@@ -13,7 +13,20 @@ def test_homepage_links_core_docs() -> None:
 
     assert 'href="docs/SERVERLESS_DAPP_MODEL.md"' in html
     assert 'href="docs/NIT_REFERENCE.md"' in html
-    assert "Nitweb.art" in html
+    assert 'href="docs/REPOSITORY_GRAPH.md"' in html
+    assert "k.nitweb.art" in html
+
+
+def test_homepage_promotes_core_repositories() -> None:
+    html = read("index.html")
+
+    for repo in (
+        "https://github.com/Knitweb/pulse",
+        "https://github.com/Knitweb/molgang",
+        "https://github.com/Knitweb/knitweb",
+        "https://github.com/Knitweb/k.nitweb.art",
+    ):
+        assert repo in html
 
 
 def test_nit_reference_keeps_protocol_claims_honest() -> None:

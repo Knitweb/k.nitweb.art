@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nitweb.art</title>
+  <title>k.nitweb.art</title>
   <meta name="description" content="Portable native dapps for the Knitweb protocol fabric.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href=".">Nitweb.art</a>
+    <a class="brand" href=".">k.nitweb.art</a>
     <nav aria-label="Primary">
       <a href="#model">Model</a>
+      <a href="#repositories">Repositories</a>
       <a href="#nit">Nit reference</a>
       <a href="#roadmap">Roadmap</a>
     </nav>
@@ -21,14 +22,15 @@
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Portable clients, protocol-owned state</p>
-        <h1>Nitweb.art</h1>
+        <h1>k.nitweb.art</h1>
         <p class="lede">
-          A reference surface for building native-feeling dapps where wallets,
-          proofs, and useful work live in the Knitweb fabric instead of a
-          central application server.
+          The art is integration: one surface that shows how Knitweb, Pulse,
+          and Molgang become a portable, serverless dapp stack instead of a set
+          of isolated repositories.
         </p>
         <div class="actions">
           <a class="button primary" href="docs/SERVERLESS_DAPP_MODEL.md">Read the model</a>
+          <a class="button" href="docs/REPOSITORY_GRAPH.md">Repository graph</a>
           <a class="button" href="docs/NIT_REFERENCE.md">Nit reference</a>
         </div>
       </div>
@@ -39,6 +41,55 @@
         <div class="node">Android shell</div>
         <div class="node">Desktop shell</div>
         <div class="node accent">Nit experiment</div>
+      </div>
+    </section>
+
+    <section id="repositories" class="band">
+      <div class="section-head">
+        <p class="eyebrow">Repository gallery</p>
+        <h2>The stack needs a public map.</h2>
+        <p>
+          k.nitweb.art promotes the active repositories as one coherent system:
+          protocol, client, game, and reference language surface.
+        </p>
+      </div>
+      <div class="repo-grid">
+        <article class="repo-card">
+          <span class="repo-role">Protocol fabric</span>
+          <h3>Knitweb Pulse</h3>
+          <p>
+            Signed state, fabric proofs, gateway contracts, and the protocol
+            surfaces that clients can trust without trusting one app server.
+          </p>
+          <a href="https://github.com/Knitweb/pulse">github.com/Knitweb/pulse</a>
+        </article>
+        <article class="repo-card">
+          <span class="repo-role">Playable dapp</span>
+          <h3>Molgang</h3>
+          <p>
+            Chemistry useful-work game and browser bar: the live proving ground
+            for wallets, PLS, silk, relays, certificates, and peer updates.
+          </p>
+          <a href="https://github.com/Knitweb/molgang">github.com/Knitweb/molgang</a>
+        </article>
+        <article class="repo-card">
+          <span class="repo-role">Public gateway</span>
+          <h3>Knitweb site</h3>
+          <p>
+            The broader public entrance for Knitweb concepts, docs, and hosted
+            artifacts that should link back to the protocol source.
+          </p>
+          <a href="https://github.com/Knitweb/knitweb">github.com/Knitweb/knitweb</a>
+        </article>
+        <article class="repo-card highlight">
+          <span class="repo-role">Integration art</span>
+          <h3>k.nitweb.art</h3>
+          <p>
+            The gallery and thesis page: portable native clients, Nit as an
+            outsider reference, and a map from experiments back to protocol.
+          </p>
+          <a href="https://github.com/Knitweb/k.nitweb.art">github.com/Knitweb/k.nitweb.art</a>
+        </article>
       </div>
     </section>
 
@@ -81,7 +132,8 @@
           Nit is not the protocol. It is a useful language reference because its
           calculator example separates business logic from desktop, Android, and
           iOS presentation. That is the same client architecture we want for
-          Knitweb dapps.
+          Knitweb dapps. The repository graph makes those clients point back to
+          the real protocol repositories instead of becoming disconnected demos.
         </p>
       </div>
       <ul class="checks">
@@ -119,8 +171,8 @@
   </main>
 
   <footer>
-    <span>Nitweb.art</span>
-    <span>For k.nitweb.ai, Pulse, and Molgang.</span>
+    <span>k.nitweb.art</span>
+    <span>For k.nitweb.ai, Pulse, Molgang, and the Knitweb protocol stack.</span>
   </footer>
 </body>
 </html>

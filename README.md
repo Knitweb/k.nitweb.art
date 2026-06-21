@@ -1,10 +1,13 @@
-# Nitweb.art
+# k.nitweb.art
 
-Nitweb.art is a small public artifact for the Knitweb ecosystem: a place to
+k.nitweb.art is a small public artifact for the Knitweb ecosystem: a place to
 explain portable, native-feeling dapps built around a serverless peer-to-peer
 protocol core.
 
-The name references two ideas:
+The `k.` prefix makes the intent explicit: this is Knitweb's art surface, not a
+standalone Nit-language fork.
+
+The name still references two ideas:
 
 - **Nit** as a stable, lesser-known language with a useful portable-app pattern:
   keep logic in one core and refine the shell per platform.
@@ -32,6 +35,8 @@ iOS behavior around the same logic.
 
 - `index.html` - static public site.
 - `styles.css` - site styling.
+- `docs/REPOSITORY_GRAPH.md` - how the Knitweb repositories promote and depend
+  on each other.
 - `docs/NIT_REFERENCE.md` - what we borrow from Nit and what we do not.
 - `docs/SERVERLESS_DAPP_MODEL.md` - ideal dapp architecture for k.nitweb.ai.
 
@@ -40,6 +45,7 @@ iOS behavior around the same logic.
 This is not a production Nit runtime integration yet. It is a positioning and
 design artifact for k.nitweb.ai, Molgang, and Pulse:
 
+- promote the active Knitweb repositories as one coherent protocol/app stack;
 - use Nit as an external reference for portable client architecture;
 - keep Pulse/Knitweb as the protocol source of truth;
 - avoid presenting a hosted PHP/Python server as the product's trust root.
