@@ -14,6 +14,7 @@ def test_homepage_links_core_docs() -> None:
     assert 'href="docs/SERVERLESS_DAPP_MODEL.md"' in html
     assert 'href="docs/NIT_REFERENCE.md"' in html
     assert 'href="docs/REPOSITORY_GRAPH.md"' in html
+    assert 'href="docs/AGENTIC_WORKFLOW.md"' in html
     assert "k.nitweb.art" in html
 
 
@@ -41,3 +42,18 @@ def test_serverless_model_rejects_server_owned_truth() -> None:
 
     assert "The server may deliver files or relay messages, but it must not own user truth" in doc
     assert "Store private wallet control material" in doc
+
+
+def test_agentic_workflow_promotes_repo_loop_and_dev_route() -> None:
+    doc = read("docs/AGENTIC_WORKFLOW.md")
+
+    assert "`gither`" in doc
+    assert "`pulse`" in doc
+    assert "`molgang`" in doc
+    assert "Fresh worktree" in doc
+    assert "https://knitweb.art/" in doc
+    assert "https://5mart.ml/knitweb/dev" in doc
+
+
+def test_custom_domain_is_knitweb_art() -> None:
+    assert read("CNAME").strip() == "knitweb.art"

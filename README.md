@@ -37,6 +37,7 @@ iOS behavior around the same logic.
 - `styles.css` - site styling.
 - `docs/REPOSITORY_GRAPH.md` - how the Knitweb repositories promote and depend
   on each other.
+- `docs/AGENTIC_WORKFLOW.md` - AI engineering workflow for the Knitweb stack.
 - `docs/NIT_REFERENCE.md` - what we borrow from Nit and what we do not.
 - `docs/SERVERLESS_DAPP_MODEL.md` - ideal dapp architecture for k.nitweb.ai.
 
@@ -46,6 +47,8 @@ This is not a production Nit runtime integration yet. It is a positioning and
 design artifact for k.nitweb.ai, Molgang, and Pulse:
 
 - promote the active Knitweb repositories as one coherent protocol/app stack;
+- promote the agentic engineering workflow across gither, pulse, molgang,
+  monitor, lens, news, and public docs;
 - use Nit as an external reference for portable client architecture;
 - keep Pulse/Knitweb as the protocol source of truth;
 - avoid presenting a hosted PHP/Python server as the product's trust root.

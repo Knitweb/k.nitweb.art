@@ -13,6 +13,10 @@ responsibilities. The art is the composition.
 | `Knitweb/molgang` | Playable dapp | Useful work, wallets, PLS/silk economy, peer updates, certificates |
 | `Knitweb/knitweb` | Public gateway | Concepts, entry docs, hosted reference artifacts |
 | `Knitweb/k.nitweb.art` | Integration gallery | Portable-client story, Nit reference, serverless dapp model |
+| `gither` | Workflow navigator | Multi-repo graph, safe edit zones, context packs, PR impact planning |
+| `monitor` | Observability | Node status, relay health, sessions, quorum, public evidence |
+| `lens` | Interpretation | Provenance explanations, Lens/RLM contracts, anomaly summaries |
+| `news` | Public progress | Release notes, sprint digests, woven public status |
 
 ## Linking Rule
 
@@ -28,6 +32,16 @@ Every public experiment should make clear which layer owns truth:
 k.nitweb.art should link outward to the real source repositories instead of
 copying their implementation details. It can summarize, route, and frame, but
 it should not become a stale mirror.
+
+## Workflow Rule
+
+The public workflow is:
+
+`issue -> plan -> worktree -> tests -> visual evidence -> docs -> PR -> CI -> merge -> public update`.
+
+`k.nitweb.art` should point people to the loop, while `knitweb.github.io` and
+the `knitweb.dev` route should make the workflow visible from the public
+whitepaper and developer surfaces.
 
 ## Nit Reference Placement
 
