@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nitweb.art</title>
+  <meta name="description" content="Portable native dapps for the Knitweb protocol fabric.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href=".">Nitweb.art</a>
+    <nav aria-label="Primary">
+      <a href="#model">Model</a>
+      <a href="#nit">Nit reference</a>
+      <a href="#roadmap">Roadmap</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Portable clients, protocol-owned state</p>
+        <h1>Nitweb.art</h1>
+        <p class="lede">
+          A reference surface for building native-feeling dapps where wallets,
+          proofs, and useful work live in the Knitweb fabric instead of a
+          central application server.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="docs/SERVERLESS_DAPP_MODEL.md">Read the model</a>
+          <a class="button" href="docs/NIT_REFERENCE.md">Nit reference</a>
+        </div>
+      </div>
+      <div class="hero-system" aria-label="Protocol diagram">
+        <div class="node core">Knitweb core</div>
+        <div class="rail"></div>
+        <div class="node">Web shell</div>
+        <div class="node">Android shell</div>
+        <div class="node">Desktop shell</div>
+        <div class="node accent">Nit experiment</div>
+      </div>
+    </section>
+
+    <section id="model" class="band">
+      <div class="section-head">
+        <p class="eyebrow">Serverless dapp model</p>
+        <h2>One state model, many clients.</h2>
+      </div>
+      <div class="grid">
+        <article>
+          <h3>Protocol first</h3>
+          <p>
+            Identity, signatures, proofs, wallet derivation, and useful-work
+            records belong to Knitweb/Pulse. UI shells are consumers, not
+            authorities.
+          </p>
+        </article>
+        <article>
+          <h3>Transport replaceable</h3>
+          <p>
+            A hosted relay can help bootstrap peers, but the dapp must not make
+            one host the permanent trust root.
+          </p>
+        </article>
+        <article>
+          <h3>Native where useful</h3>
+          <p>
+            Android and desktop clients can be thin native shells around the
+            same signed state, not separate backends with divergent truth.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="nit" class="split">
+      <div>
+        <p class="eyebrow">Why Nit is here</p>
+        <h2>A stable outsider reference.</h2>
+        <p>
+          Nit is not the protocol. It is a useful language reference because its
+          calculator example separates business logic from desktop, Android, and
+          iOS presentation. That is the same client architecture we want for
+          Knitweb dapps.
+        </p>
+      </div>
+      <ul class="checks">
+        <li>Shared core logic</li>
+        <li>Platform refinements</li>
+        <li>Android APK target</li>
+        <li>No server-owned account state</li>
+      </ul>
+    </section>
+
+    <section id="roadmap" class="band">
+      <div class="section-head">
+        <p class="eyebrow">Build path</p>
+        <h2>From reference to proof.</h2>
+      </div>
+      <ol class="steps">
+        <li>
+          <strong>Positioning site</strong>
+          <span>Publish the model and reference language story.</span>
+        </li>
+        <li>
+          <strong>Protocol fixture</strong>
+          <span>Define a small signed-state JSON fixture any client can render.</span>
+        </li>
+        <li>
+          <strong>Android shell</strong>
+          <span>Build a native or Nit-inspired shell around the same fixture.</span>
+        </li>
+        <li>
+          <strong>P2P transport</strong>
+          <span>Replace hosted defaults with explicit peer/relay selection.</span>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <span>Nitweb.art</span>
+    <span>For k.nitweb.ai, Pulse, and Molgang.</span>
+  </footer>
+</body>
+</html>
