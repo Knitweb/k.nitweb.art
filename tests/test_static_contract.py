@@ -24,8 +24,9 @@ def test_homepage_promotes_core_repositories() -> None:
     for repo in (
         "https://github.com/Knitweb/pulse",
         "https://github.com/Knitweb/molgang",
-        "https://github.com/Knitweb/knitweb",
+        "https://github.com/Knitweb/knitweb.github.io",
         "https://github.com/Knitweb/k.nitweb.art",
+        "https://knitweb.github.io/professions/",
     ):
         assert repo in html
 
