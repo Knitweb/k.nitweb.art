@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serverless Dapp Model — Knitweb</title>
+  <meta name="description" content="Protocol-owned application model: client holds keys, protocol owns state, transport is replaceable.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .doc-wrap { max-width: 820px; margin: 0 auto; padding: clamp(32px,6vw,72px) clamp(18px,5vw,48px); }
+    .doc-back { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .doc-back:hover { color: var(--ink); }
+    .doc-eyebrow { font-size: 11px; font-weight: 750; text-transform: uppercase;
+                   letter-spacing: .08em; color: var(--accent); margin: 28px 0 6px; }
+    h1 { font-size: clamp(28px,5vw,44px); font-weight: 800; line-height: 1.1; margin: 0 0 20px; }
+    h2 { font-size: 20px; font-weight: 750; margin: 40px 0 12px; padding-bottom: 8px;
+         border-bottom: 1px solid var(--line); }
+    p  { color: var(--muted); margin: 0 0 16px; font-size: 15px; line-height: 1.7; }
+    strong { color: var(--ink); }
+    code { font-family: ui-monospace, monospace; font-size: 13px;
+           background: var(--panel); padding: 2px 6px; border-radius: 3px;
+           color: var(--accent); border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0 24px; }
+    th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line);
+         color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); }
+    td strong { color: var(--ink); }
+    tr:last-child td { border-bottom: none; }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { color: var(--muted); font-size: 15px; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid var(--line); margin: 36px 0; }
+    .principle-box { border: 1px solid var(--accent); border-radius: 8px; padding: 16px 20px;
+                      background: rgba(95,208,165,.05); margin: 20px 0; }
+    .principle-box p { color: var(--accent); margin: 0; font-size: 15px; }
+    .next-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+                  gap: 10px; margin: 16px 0; }
+    .next-item { padding: 14px 16px; border: 1px solid var(--line); border-radius: 8px;
+                  background: var(--panel); font-size: 13px; color: var(--muted); }
+    .next-item strong { color: var(--ink); display: block; margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">k.nitweb.art</a>
+    <nav aria-label="Primary">
+      <a href="../worlds.html">WNW dapp</a>
+      <a href="worlds-narrow-web.html">Architecture</a>
+      <a href="repository-graph.html">Repo graph</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="doc-wrap">
+      <a class="doc-back" href="../index.html">← k.nitweb.art</a>
+      <p class="doc-eyebrow">Serverless dapp model</p>
+      <h1>One state model, many clients.</h1>
+      <p>k.nitweb.art frames the ideal Knitweb dapp as a protocol-owned application, not a server-owned website. The server may deliver files or relay messages, but it must not own user truth.</p>
+
+      <div class="principle-box">
+        <p>The server may deliver files or relay messages, but it must not own user truth.</p>
+      </div>
+
+      <p>Core user truth includes: wallet identity, signed intents, useful-work records, proof links, and portable read models.</p>
+
+      <hr>
+
+      <h2>Layers</h2>
+      <table>
+        <thead><tr><th>Layer</th><th>Responsibility</th><th>Must Not Do</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Client shell</strong></td>
+            <td>Render state, collect user intent, hold local keys</td>
+            <td>Become the source of truth</td>
+          </tr>
+          <tr>
+            <td><strong>Knitweb/Pulse core</strong></td>
+            <td>Verify signatures, proofs, relations, and useful work</td>
+            <td>Hide authority in one hosted app</td>
+          </tr>
+          <tr>
+            <td><strong>Transport</strong></td>
+            <td>Relay, sync, or gossip messages</td>
+            <td>Require one permanent central endpoint</td>
+          </tr>
+          <tr>
+            <td><strong>Storage</strong></td>
+            <td>Persist snapshots, proofs, and fabric state</td>
+            <td>Store private wallet control material</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Android Dapp Shape</h2>
+      <p>An Android dapp should be a shell around the same signed protocol state as the web client:</p>
+      <ol>
+        <li>Local wallet secret is created or recovered on-device.</li>
+        <li>The UI renders a canonical read model.</li>
+        <li>User actions become signed intents.</li>
+        <li>Intents are sent through a configured peer/relay.</li>
+        <li>The client can switch relay without changing wallet identity.</li>
+      </ol>
+      <p>This is where the Nit calculator pattern is relevant: keep logic portable and refine platform interaction around it.</p>
+
+      <hr>
+
+      <h2>Next Repository Milestones</h2>
+      <div class="next-grid">
+        <div class="next-item"><strong>Signed-state fixture</strong>Define a tiny signed-state fixture in <code>fixtures/</code></div>
+        <div class="next-item"><strong>Browser renderer</strong>Publish a browser renderer for that fixture</div>
+        <div class="next-item"><strong>Android design note</strong>Add an Android-client design note</div>
+        <div class="next-item"><strong>Intent format</strong>Create a first transport-neutral intent format</div>
+        <div class="next-item"><strong>Native client</strong>Experiment with Nit or Nit-inspired native-client code</div>
+      </div>
+    </div>
+  </main>
+
+  <footer style="padding:24px clamp(18px,5vw,72px); border-top:1px solid var(--line); font-size:12px; color:var(--muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <span>Knitweb · vang · Pulse</span>
+    <span><a href="https://knitweb.github.io/gither/" style="color:var(--muted)">gither</a> · <a href="https://github.com/Knitweb/pulse" style="color:var(--muted)">pulse</a></span>
+  </footer>
+</body>
+</html>
