@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gither Agentic Workflow</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .case-shell {
+      width: min(1080px, calc(100% - 32px));
+      margin: 24px auto 48px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .case-panel {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      background: rgba(10, 16, 26, 0.88);
+      padding: 20px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .case-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+      gap: 16px;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .case-card,
+    .case-list li {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 14px;
+    }
+
+    .case-list {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .case-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .case-actions .button {
+      width: auto;
+    }
+
+    code,
+    pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+
+    pre {
+      margin: 0;
+      padding: 12px;
+      border-radius: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow-x: auto;
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      .case-hero,
+      .case-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href=".">k.nitweb.art</a>
+    <nav aria-label="Primary">
+      <a href="index.html#workflow">Workflow</a>
+      <a href="docs/agentic-workflow.html">General loop</a>
+      <a href="https://knitweb.github.io/gither/">Gither site</a>
+    </nav>
+  </header>
+
+  <main class="case-shell">
+    <section class="case-panel case-hero">
+      <div>
+        <p class="eyebrow">Agentic workflow case</p>
+        <h1>Gither gives the Knitweb stack a forge that agents can actually work through.</h1>
+        <p>
+          GitHub is a repository. Gither is a marketplace for living software.
+          In the Knitweb stack that matters because the workflow is not only
+          "write code." It is route work, preserve context, gate releases,
+          record dependency structure, and later connect value to actual use.
+        </p>
+        <p>
+          The practical sales motion is straightforward: start as a p2p duplicate
+          of GitHub, familiar enough to adopt, but portable enough to survive
+          GitHub lockout and move toward serverless and Web3 release flows.
+        </p>
+        <div class="case-actions">
+          <a class="button primary" href="https://knitweb.github.io/gither/">Open Gither</a>
+          <a class="button" href="docs/agentic-workflow.html">Read workflow</a>
+          <a class="button" href="https://5mart.ml/gither/">5mart route target</a>
+        </div>
+      </div>
+      <div class="case-panel">
+        <p class="eyebrow">Role split</p>
+        <div class="case-card"><strong>Gither</strong><br>Review state, release gates, ownership policy, mirror policy.</div>
+        <div class="case-card"><strong>Knitweb</strong><br>Dependency graph, portable relation layer, neutral content-addressed fabric.</div>
+        <div class="case-card"><strong>Pulse</strong><br>Real usage receipts and activity evidence.</div>
+        <div class="case-card"><strong>vang</strong><br>Optional issuer-backed identity and governance rail for sensitive actions.</div>
+      </div>
+    </section>
+
+    <section class="case-grid">
+      <article class="case-panel">
+        <p class="eyebrow">Why this matters</p>
+        <h2>Agentic workflows need portable authority, not only hosted PRs.</h2>
+        <ul class="case-list">
+          <li>GitHub can still be a mirror, but it should not own repository identity or release truth.</li>
+          <li>GitLab is not the strategic answer. It still depends on servers, operators, hosted instances, and platform uptime.</li>
+          <li>Radicle proves the sovereign-forge direction, but Gither can go further on deploy receipts, usage-linked ownership, and optional identity-backed authority.</li>
+          <li>That makes Gither the missing forge layer for a Knitweb-native agent studio.</li>
+        </ul>
+      </article>
+
+      <article class="case-panel">
+        <p class="eyebrow">Example case</p>
+        <h2>Issuer-backed release gate for agent identity</h2>
+        <ol class="case-list">
+          <li>A change request comes in: maintainers want agent-sensitive releases to require stronger signer accountability.</li>
+          <li>Gither routes the work across <code>gither</code> and <code>vang</code>, with Knitweb relation updates if the dependency graph changes.</li>
+          <li>The agent writes change context, runs the review gate, and records which repos and files are part of the accepted release.</li>
+          <li>vang provides the optional attestation boundary: public records stay PII-free, but a signer can still be traced through an encrypted evidence path if policy demands it.</li>
+          <li>After release, Pulse records real use. Only then does the ownership model have grounds to distribute value.</li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="case-grid">
+      <article class="case-panel">
+        <p class="eyebrow">Operator loop</p>
+        <h2>What the developer actually runs</h2>
+        <pre>gither route "require issuer-backed release signing for vang maintainers"
+gither repo-snapshot --repo .
+gither change-note --summary "enforce strong release identity" --why "protect sensitive governance and operator state"
+gither gate --repo . --python-root src</pre>
+      </article>
+
+      <article class="case-panel">
+        <p class="eyebrow">Public surfaces</p>
+        <h2>Where this should show up</h2>
+        <ul class="case-list">
+          <li>Desired independent route: <code>https://gither.github.io/</code></li>
+          <li>Current public fallback: <code>https://knitweb.github.io/gither/</code></li>
+          <li>Custom domain gallery: <code>https://knitweb.art/</code></li>
+          <li>Planned operator surface: <code>https://5mart.ml/gither/</code></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agentic Engineering Workflow — Knitweb</title>
+  <meta name="description" content="Practical agentic engineering workflow for the Knitweb stack. Terminal-first, worktrees, adversarial review, public PR proof.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .doc-wrap { max-width: 820px; margin: 0 auto; padding: clamp(32px,6vw,72px) clamp(18px,5vw,48px); }
+    .doc-back { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .doc-back:hover { color: var(--ink); }
+    .doc-eyebrow { font-size: 11px; font-weight: 750; text-transform: uppercase;
+                   letter-spacing: .08em; color: var(--accent); margin: 28px 0 6px; }
+    h1 { font-size: clamp(28px,5vw,44px); font-weight: 800; line-height: 1.1; margin: 0 0 20px; }
+    h2 { font-size: 20px; font-weight: 750; margin: 40px 0 12px; padding-bottom: 8px;
+         border-bottom: 1px solid var(--line); }
+    p  { color: var(--muted); margin: 0 0 16px; font-size: 15px; line-height: 1.7; }
+    strong { color: var(--ink); }
+    code { font-family: ui-monospace, monospace; font-size: 13px;
+           background: var(--panel); padding: 2px 6px; border-radius: 3px;
+           color: var(--accent); border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0 24px; }
+    th { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line);
+         color: var(--muted); font-size: 11px; text-transform: uppercase; font-weight: 700; }
+    td { padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; color: var(--muted); }
+    td strong { color: var(--ink); }
+    tr:last-child td { border-bottom: none; }
+    ul, ol { margin: 0 0 16px; padding-left: 22px; }
+    li { color: var(--muted); font-size: 15px; margin-bottom: 6px; }
+    hr { border: none; border-top: 1px solid var(--line); margin: 36px 0; }
+    .loop-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+                  gap: 10px; margin: 16px 0; }
+    .loop-step { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px;
+                  background: var(--panel); }
+    .step-num { font-size: 11px; color: var(--accent); font-weight: 750; margin: 0 0 4px; }
+    .step-label { font-size: 13px; font-weight: 700; color: var(--ink); margin: 0; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../">k.nitweb.art</a>
+    <nav aria-label="Primary">
+      <a href="../gither-agentic-workflow.html">Gither case</a>
+      <a href="../index.html#workflow">Workflow</a>
+      <a href="https://knitweb.github.io/gither/">Gither site</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="doc-wrap">
+      <a class="doc-back" href="../index.html">← k.nitweb.art</a>
+      <p class="doc-eyebrow">Engineering workflow</p>
+      <h1>Agentic Engineering Workflow</h1>
+      <p>k.nitweb.art promotes a practical AI engineering workflow for the Knitweb stack. Within that stack, Gither is the forge layer that makes agent work reviewable, portable, and ownership-aware.</p>
+
+      <h2>Operating Model</h2>
+      <table>
+        <thead><tr><th>Layer</th><th>Knitweb interpretation</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Terminal-first work</strong></td><td>Keep build, test, review, and deployment commands reproducible across machines.</td></tr>
+          <tr><td><strong>Memory files</strong></td><td>Store repo layout, test commands, contracts, and prior decisions close to the code.</td></tr>
+          <tr><td><strong>Skills</strong></td><td>Keep conditional agent instructions small and load them only when needed.</td></tr>
+          <tr><td><strong>Worktrees</strong></td><td>Run parallel agents without colliding in one dirty checkout.</td></tr>
+          <tr><td><strong>Visual evidence</strong></td><td>Require screenshots, rendered docs, logs, or API traces for user-facing changes.</td></tr>
+          <tr><td><strong>No-mistakes pipeline</strong></td><td>Branch, isolated worktree, adversarial review, tests, docs, PR, CI, merge.</td></tr>
+          <tr><td><strong>First-mate orchestration</strong></td><td>One coordinating agent delegates small PR-sized tasks across repositories.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Repository Roles</h2>
+      <table>
+        <thead><tr><th>Repository</th><th>Workflow job</th></tr></thead>
+        <tbody>
+          <tr><td><code>gither</code></td><td>Multi-repo navigator, dependency graph, issue-to-task planner, safe edit zones, context packs.</td></tr>
+          <tr><td><code>pulse</code></td><td>Protocol core, canonical bytes, gateway contracts, Lens/RLM boundaries, PoUW and ledger proofs.</td></tr>
+          <tr><td><code>molgang</code></td><td>Product/testbed, browser dapp, multiplayer flows, Playwright evidence, wallet/PLS economy.</td></tr>
+          <tr><td><code>monitor</code></td><td>Observability, node health, session timelines, quorum/relay status, public dashboards.</td></tr>
+          <tr><td><code>lens</code></td><td>Interpretability over fabric data, graph-to-summary, provenance explanation, anomaly reporting.</td></tr>
+          <tr><td><code>news</code></td><td>Public progress feed from merged PRs, woven graph events, release notes, sprint digests.</td></tr>
+          <tr><td><code>k.nitweb.art</code></td><td>Public gallery for the workflow, architecture, demos, and repo map.</td></tr>
+          <tr><td><code>vang</code></td><td>Optional strong-identity and governance rail for sensitive release or operator actions.</td></tr>
+        </tbody>
+      </table>
+
+      <hr>
+
+      <h2>Feature Loop</h2>
+      <p>Every feature moves through the same loop:</p>
+      <div class="loop-grid">
+        <div class="loop-step"><p class="step-num">01</p><p class="step-label">Issue with owner + boundaries</p></div>
+        <div class="loop-step"><p class="step-num">02</p><p class="step-label">Plan when crossing modules</p></div>
+        <div class="loop-step"><p class="step-num">03</p><p class="step-label">Fresh worktree</p></div>
+        <div class="loop-step"><p class="step-num">04</p><p class="step-label">Reproduce or define acceptance test</p></div>
+        <div class="loop-step"><p class="step-num">05</p><p class="step-label">Patch</p></div>
+        <div class="loop-step"><p class="step-num">06</p><p class="step-label">Lint, tests, visual evidence</p></div>
+        <div class="loop-step"><p class="step-num">07</p><p class="step-label">Docs or public artifact update</p></div>
+        <div class="loop-step"><p class="step-num">08</p><p class="step-label">PR with test proof</p></div>
+        <div class="loop-step"><p class="step-num">09</p><p class="step-label">CI review and merge</p></div>
+        <div class="loop-step"><p class="step-num">10</p><p class="step-label">Public status update</p></div>
+      </div>
+
+      <hr>
+
+      <h2>Agent Profile</h2>
+      <p>Recommended defaults for agents working in the Knitweb stack:</p>
+      <ul>
+        <li>Never add agent names as commit co-authors.</li>
+        <li>Do not manually edit generated changelogs.</li>
+        <li>Prefer quality, correctness, robustness, and maintainability over short-term development cost.</li>
+        <li>Start bug fixes with the closest end-user reproduction possible.</li>
+        <li>Treat UI evidence seriously: screenshots, layout, overlap, and rendering defects matter.</li>
+        <li>Treat lint, test failures, and flakiness as real work, even when found adjacent to the task.</li>
+        <li>Use isolated worktrees for parallel agents.</li>
+        <li>Keep public claims honest: hosted relays are distribution or bootstrap surfaces, not protocol trust roots.</li>
+      </ul>
+
+      <hr>
+
+      <h2>Public Routes</h2>
+      <ul>
+        <li>Workflow gallery: <a href="https://knitweb.github.io/k.nitweb.art/" style="color:var(--accent-2)">knitweb.github.io/k.nitweb.art/</a></li>
+        <li>Gither public fallback: <a href="https://knitweb.github.io/gither/" style="color:var(--accent-2)">knitweb.github.io/gither/</a></li>
+        <li>Knitweb whitepaper: <a href="https://knitweb.github.io/" style="color:var(--accent-2)">knitweb.github.io/</a></li>
+        <li>Dev workflow route: <a href="https://5mart.ml/knitweb/dev" style="color:var(--accent-2)">5mart.ml/knitweb/dev</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <footer style="padding:24px clamp(18px,5vw,72px); border-top:1px solid var(--line); font-size:12px; color:var(--muted); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+    <span>Knitweb · vang · Pulse</span>
+    <span><a href="https://knitweb.github.io/gither/" style="color:var(--muted)">gither</a> · <a href="https://github.com/Knitweb/pulse" style="color:var(--muted)">pulse</a></span>
+  </footer>
+</body>
+</html>
